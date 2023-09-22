@@ -1,0 +1,284 @@
+nav {
+    position: absolute;
+}
+
+
+nav a, .hamburger-menu {
+    color: var(--bg);
+}
+
+.dropdown-menu {
+    background-color: transparent;
+    border: 1px solid var(--bg);
+    backdrop-filter: blur(8px);
+}
+
+#splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--bg);
+    background-color: #0d0f21;
+
+    width: 100vw;
+    height: 100vh;
+    padding: 0 2em;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#captions h1, #captions h2 {
+    text-align: center;
+}
+
+#captions h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+}
+
+#captions h2 {
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+#captions div {
+    transition: 0.5s;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#captions .pre-current {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% - 7em));
+}
+
+#captions div:not(.pre-current, .current) {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 7em));
+}
+
+
+#circles {
+    display: flex;
+    gap: 0.5em;
+
+    padding-bottom: 0.7em;
+}
+
+#circles span {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #5d5d5d;
+}
+
+#circles span.current {
+    background-color: #ffffff;
+}
+
+.overview > div {
+    display: flex;
+    gap: 2em;
+}
+
+.text {
+    display: flex;
+    flex: 0 0 calc(65% - 1em);
+    flex-direction: column;
+    gap: 1em;
+}
+
+.text > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.text > div a {
+    border: 1px solid var(--fg);
+    border-radius: 100vh;
+    font-size: 0.9em;
+    padding: 0.8em 1.5em;
+
+    transition: 0.2s;
+}
+
+.text > div a:hover {
+    color: var(--bg);
+    background-color: var(--accent);
+}
+
+.info {
+    display: flex;
+    flex: 0 0 calc(35% - 1em);
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info > div {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.info svg {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.info p, .info a {
+    color: var(--accent);
+}
+
+.info > div > div > p:nth-child(1) {
+    font-weight: 700;
+}
+
+.timer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    background-image: linear-gradient(rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.8)), url("/images/timer.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 3em 5em;
+    color: var(--bg);
+}
+
+.timer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vw;
+}
+
+
+.timer > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.timer .number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    font-size: 2.2em;
+    width: 3em;
+    height: 3em;
+
+    border-radius: 0.2em;
+    background-color: rgba(20, 24, 54, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--bg);
+}
+
+.timeline {
+    display: flex;
+    align-items: center;
+}
+
+.timeline .spine {
+    background-color: var(--accent);
+    min-width: 8px;
+    padding: 12em 0em;
+    border-radius: 0.5em;
+}
+
+.timeline > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3em
+}
+
+.timeline .event {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+}
+
+.timeline .dot {
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    background-color: var(--accent);
+    border-radius: 100%;
+
+    transform: translateX(-16px);
+}
+
+footer {
+    background-color: var(--accent);
+    color: var(--bg);
+    padding: 2em 5em;
+}
+
+footer > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer hr {
+    color: #d3ad67;
+    background-color: #d3ad67;
+}
+
+footer a {
+    color: var(--bg);
+    text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .text div {
+        justify-content: center;
+    }
+
+    .overview > div {
+        flex-direction: column;
+    }
+
+    .info {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .info {
+        flex-direction: column;
+        gap: 2em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav ul .links a, .hamburger-opened .hamburger-menu {
+        color: var(--fg);
+    }
+
+    #splash h1 {
+        font-size: 2.5em;
+    }
+
+    #splash h2 {
+        font-size: 1.5em;
+    }
+}
+
